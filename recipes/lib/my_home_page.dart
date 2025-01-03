@@ -29,15 +29,25 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-
 Widget buildRecipesCard(Recipe recipe) {
-  return Card(
-    child: Column(
-      children: [
-        Image.asset(recipe.imgurl),
-        Text(recipe.label)
-      ],
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Card(
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        children: [
+          Image.asset(recipe.imgurl),
+          SizedBox(height: 10),
+          Text(
+            recipe.label,
+            style:
+                TextStyle(fontFamily: 'paltine', fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
     ),
   );
 }
